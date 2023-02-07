@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CodeCraftrers</title>
+  <style>
+    body {
+      background-color: #282c34;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .text {
+      font-size: 30px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    button {
+      border-radius: 25px;
+      padding: 10px 20px;
+      background-color: #5E00E8;
+      color: #fff;
+      border: none;
+      transition: transform 0.2s ease-in-out;
+      margin: 0 10px;
+    }
+
+    button:hover {
+      transform: scale(1.2);
+    }
+
+    #toggle-theme {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: #15062A;
+      color: #fff;
+      border-radius: 25px;
+      padding: 10px 20px;
+      border: none;
+      transition: transform 0.2s ease-in-out;
+    }
+    .light-theme {
+      background-color: #fff;
+      color: #282c34;
+    }
+    #toggle-theme:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+    <p class="text">Добро пожаловать на сайт канала CodeCraftrers</p>
+
+  <div class="container">
+    <a href="https://t.me/Program_TLbot">
+      <button>Канал</button>
+    </a>
+    <a href="https://t.me/Sale_cheap_bot">
+      <button>Бот sale</button>
+    </a>
+    <a href="https://t.me/Program_TLbot">
+      <button>Гдз Бот</button>
+    </a>
+  </div>
+  <div class="container">
+    <button id="toggle-fact">Факт</button>
+      <p id="fact" style="display: none;">Программирование — это процесс проектирования и создания исполняемой компьютерной программы для достижения определенного результата вычислений</p>
+    </div>
+  </div>
+
+  <button id="toggle-theme">Dark Theme</button>
+<script>
+    document.getElementById("toggle-fact").addEventListener("click", function() {
+      var fact = document.getElementById("fact");
+      if (fact.style.display === "none") {
+        fact.style.display = "block";
+      } else {
+        fact.style.display = "none";
+      }
+    });
+</script>
+<script>
+    document.getElementById("toggle-theme").addEventListener("click", function() {
+      if (this.innerHTML === "Dark Theme") {
+        document.body.style.backgroundColor = "#fff";
+        document.querySelectorAll(".text").forEach(function(el) {
+          el.style.color = "#000";
+        });
+        this.style.backgroundColor = "#A28FBE";
+        this.style.color = "#fff";
+        this.innerHTML = "Light Theme";
+      } else {
+        document.body.style.backgroundColor = "#282c34";
+        document.querySelectorAll(".text").forEach(function(el) {
+          el.style.color = "#fff";
+        });
+        this.style.backgroundColor = "#15062A";
+        this.style.color = "#fff";
+        this.innerHTML = "Dark Theme";
+      }
+    });
+</script>
+</body>
+</html>
